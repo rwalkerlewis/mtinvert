@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68.0", "setuptools-scm>=8.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mtinvert"
+version = "0.1.0"
+description = "Automated regional moment tensor inversion from broadband seismic waveforms"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+dependencies = [
+    "obspy>=1.4.0",
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "matplotlib>=3.7.0",
+    "h5py>=3.8.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "pytest-cov"]
+
+[project.scripts]
+mtinvert = "mtinvert.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
