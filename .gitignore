@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Downloaded/generated data
+examples/data/
+examples/stations/
+examples/gf_library/
+examples/output/

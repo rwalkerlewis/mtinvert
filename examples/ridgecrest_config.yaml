@@ -1,0 +1,58 @@
+# mtinvert configuration for Ridgecrest M6.4 foreshock example
+# Event: 2019-07-04 17:33:49 UTC, M6.4, Ridgecrest CA
+
+# --- Paths ---
+data_dir: "/app/examples/data"
+stationxml_path: "/app/examples/stations/CI.xml"
+output_dir: "/app/examples/output"
+gf_library_path: "/app/examples/gf_library/ridgecrest.h5"
+
+# --- 1D Velocity Model (SoCal) ---
+velocity_model:
+  - thickness_km: 5.5
+    vp_km_s: 5.5
+    vs_km_s: 3.18
+    rho_g_cc: 2.4
+    qp: 600
+    qs: 300
+  - thickness_km: 10.5
+    vp_km_s: 6.3
+    vs_km_s: 3.64
+    rho_g_cc: 2.67
+    qp: 600
+    qs: 300
+  - thickness_km: 16.0
+    vp_km_s: 6.7
+    vs_km_s: 3.87
+    rho_g_cc: 2.8
+    qp: 600
+    qs: 300
+  - thickness_km: 0.0
+    vp_km_s: 7.8
+    vs_km_s: 4.5
+    rho_g_cc: 3.0
+    qp: 1000
+    qs: 500
+
+# --- Green's Function Grid ---
+distance_min_km: 50.0
+distance_max_km: 200.0
+distance_step_km: 5.0
+depth_min_km: 2.0
+depth_max_km: 20.0
+depth_step_km: 2.0
+
+# --- Waveform Processing ---
+freqmin_hz: 0.02
+freqmax_hz: 0.05
+pre_event_sec: 30.0
+post_event_sec: 150.0
+taper_fraction: 0.05
+snr_threshold: 2.0
+water_level_db: 60.0
+
+# --- Inversion ---
+inversion_type: deviatoric
+
+# --- Parallel Processing ---
+n_workers: 1
